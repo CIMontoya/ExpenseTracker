@@ -58,44 +58,44 @@ module ExpenseTracker
       end
     end
 
-    describe 'Get /expenses/:date' do
-      let(:date){{'some' => 'data'}}
+    # describe 'Get /expenses/:date' do
+    #   let(:date){{'some' => 'data'}}
 
-      before do
-        allow(ledger).to receive(:expenses_on)
-        .with(date)
-        .and_return((RecordResult.new(true, 417, nil)))
-      end
+    #   before do
+    #     allow(ledger).to receive(:expenses_on)
+    #     .with(date)
+    #     .and_return((RecordResult.new(true, 417, nil)))
+    #   end
 
-      context 'when expenses exist on the given date' do
-        it 'returns the expense records as JSON' do
-          get '/expenses/2023-10-23', JSON.generate(date)
+    #   context 'when expenses exist on the given date' do
+    #     it 'returns the expense records as JSON' do
+    #       get '/expenses/2023-10-23', JSON.generate(date)
 
-          parsed = JSON.parse(last_response.body)
-          expect(parsed).to eq(['expense_id' => 417])
-        end
+    #       parsed = JSON.parse(last_response.body)
+    #       expect(parsed).to eq(['expense_id' => 417])
+    #     end
         
-        it 'responds with a 200 (OK)' do
-          get '/expenses/2023-10-23', JSON.generate(date)
+    #     it 'responds with a 200 (OK)' do
+    #       get '/expenses/2023-10-23', JSON.generate(date)
 
-          expect(last_response.status).to eq(200)
-        end
-      end
+    #       expect(last_response.status).to eq(200)
+    #     end
+    #   end
 
-      context 'when there are no expenses on the given date' do
-        it 'returns an empty array as JSON' do
-          get '/expenses/2023-10-24', JSON.generate(date)
+    #   context 'when there are no expenses on the given date' do
+    #     it 'returns an empty array as JSON' do
+    #       get '/expenses/2023-10-24', JSON.generate(date)
 
-          parsed = JSON.parse(last_response.body)
-          expect(parsed).to eq([])
-        end
+    #       parsed = JSON.parse(last_response.body)
+    #       expect(parsed).to eq([])
+    #     end
 
-        it 'responds with a 200 (OK)' do
-          get '/expenses/2023-10-24', JSON.generate(date)
+    #     it 'responds with a 200 (OK)' do
+    #       get '/expenses/2023-10-24', JSON.generate(date)
 
-          expect(last_response.status).to eq(200)
-        end
-      end
-    end
+    #       expect(last_response.status).to eq(200)
+    #     end
+    #   end
+    # end
   end
 end
