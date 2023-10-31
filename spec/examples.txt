@@ -1,0 +1,10 @@
+example_id                           | status | run_time        |
+------------------------------------ | ------ | --------------- |
+./spec/unit/app/api_spec.rb[1:1:1:1] | passed | 0.00068 seconds |
+./spec/unit/app/api_spec.rb[1:1:1:2] | passed | 0.0003 seconds  |
+./spec/unit/app/api_spec.rb[1:1:2:1] | passed | 0.00106 seconds |
+./spec/unit/app/api_spec.rb[1:1:2:2] | passed | 0.01978 seconds |
+./spec/unit/app/api_spec.rb[1:2:1:1] | failed | 0.00082 seconds |
+./spec/unit/app/api_spec.rb[1:2:1:2] | failed | 0.00079 seconds |
+./spec/unit/app/api_spec.rb[1:2:2:1] | failed | 0.00226 seconds |
+./spec/unit/app/api_spec.rb[1:2:2:2] | failed | 0.00083 seconds |
